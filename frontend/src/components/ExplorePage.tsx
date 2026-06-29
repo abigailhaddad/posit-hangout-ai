@@ -163,7 +163,15 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
             >
               Posit Data Science Hangout
             </a>
-            . Accuracy depends on transcript quality.
+            . Accuracy depends on transcript quality.{" "}
+            <a
+              href="https://github.com/abigailhaddad/posit-hangout-ai/releases/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white/70 transition-colors"
+            >
+              Download all transcripts ↓
+            </a>
           </p>
         </div>
 
