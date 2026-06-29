@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# macOS
+.DS_Store
+
+# Playwright MCP logs/screenshots
+.playwright-mcp/
+
+# Transcripts — large, fetch via get_transcripts.py
+transcripts/*.txt
+transcripts/*.chunks.json
+
+# Old / intermediate analysis files — not used by the frontend
+analysis/mentions.json
+analysis/mentions_raw.json
+analysis/mentions_raw_backup_gpt5.json
+analysis/mentions_newtest.json
+
+# Claude Code memory (auto-generated, not project data)
+memory/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
