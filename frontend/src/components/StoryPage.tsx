@@ -153,7 +153,7 @@ const CHAPTERS: Chapter[] = [
     subhead: "",
     narrative:
       "In 2022, one guest mentioned exploring GPT-3. In 2026, another said they built an app with Claude and Positron that week.",
-    stat: "1,039 sentences matched by keyword search across 221 episodes",
+    stat: "1,039 sentences matched by keyword search across 225 episodes",
     quotes: [],
   },
 ];
@@ -740,7 +740,7 @@ export default function StoryPage({
       {/* CTA */}
       <div className="py-24 px-6 text-center border-t border-white/8">
         <p className="text-white/30 text-xs uppercase tracking-widest mb-4">
-          221 episodes · 2022–2026
+          225 episodes · 2021–2026
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
           1,039 quotes, searchable

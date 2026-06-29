@@ -173,6 +173,7 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
             >
               Download all transcripts ↓
             </a>
+            {" "}· <span title="15 episodes from mid-2021 were initially blocked by YouTube and later retrieved via yt-dlp. All 225 episodes now have transcripts.">225 of 225 episodes have transcripts</span>
           </p>
         </div>
 

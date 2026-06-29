@@ -40,6 +40,8 @@ pip install youtube_transcript_api
 python3 get_transcripts.py
 ```
 
+Downloads 225 transcripts. Note: 15 episodes from mid-2021 were IP-blocked by YouTube's API and required a separate fetch via yt-dlp — run `fetch_blocked_via_ytdlp.py` if you see errors on those IDs. All 225 episodes currently have transcripts.
+
 Downloads transcripts for all playlist episodes into `transcripts/`. Skips already-fetched episodes on re-runs.
 
 ### 3. Generate the data file
