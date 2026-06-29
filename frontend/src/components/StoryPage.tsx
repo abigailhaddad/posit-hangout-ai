@@ -696,8 +696,7 @@ export default function StoryPage({
           >
             Posit Data Science Hangout
           </a>{" "}
-          is a weekly community call for data people — no slides, no script, just real talk.
-          These are the moments where AI came up — what they said, when it shifted, and how the conversation changed.
+          is a weekly community call for data people.
         </p>
         <p className="text-white/20 text-sm mt-4 max-w-xl mx-auto">
           Unofficial fan project — not affiliated with or endorsed by Posit PBC.

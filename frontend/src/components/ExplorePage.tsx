@@ -162,7 +162,7 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
             >
               Posit Data Science Hangout
             </a>
-            {" "}— a weekly community call for data people. No slides, no script, just real talk.
+            {" "}— weekly community call for data people.
             These {mentions.length.toLocaleString()} sentences came up in keyword search across{" "}
             {new Set(mentions.map((m) => m.video_id)).size} auto-generated YouTube transcripts.{" "}
             <a
