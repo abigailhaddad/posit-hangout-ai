@@ -543,7 +543,7 @@ function findMention(mentions: Mention[], ref: QuoteRef): Mention | undefined {
   return mentions.find(
     (m) =>
       m.video_id === ref.video_id &&
-      m.quote.toLowerCase().startsWith(ref.quote_prefix.toLowerCase().slice(0, 30))
+      m.quote.replace(/\s+/g, " ").toLowerCase().startsWith(ref.quote_prefix.toLowerCase().slice(0, 30))
   );
 }
 

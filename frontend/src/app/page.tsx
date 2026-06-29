@@ -3,8 +3,6 @@ import { join } from "path";
 import StoryPage from "@/components/StoryPage";
 import type { Mention, CoverageYear, ToolYear } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
-
 function loadMentions(): Mention[] {
   try {
     const p = join(process.cwd(), "..", "analysis", "regex_mentions.json");
