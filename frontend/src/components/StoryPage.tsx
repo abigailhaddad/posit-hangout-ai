@@ -39,7 +39,7 @@ const CHAPTERS: Chapter[] = [
     subhead: "Before ChatGPT, 'LLM' and 'generative AI' were nearly absent from the conversation",
     narrative:
       "In 2022, generative AI barely came up. ChatGPT launched in December.",
-    stat: "Only 1 episode in 2022 used AI keywords — the conversation was about ML, before the LLM era",
+    stat: "Only 1 episode in 2022 used AI keywords",
     quotes: [
       { video_id: "-mm5tHQVPY8", quote_prefix: "For people that have new-- every", highlight: "But there should be some sort of detailed — or an educated guesstimate — of ROI", extendedQuote: "For people that have new — everyone's excited about ML and AI. But there should be some sort of detailed — or an educated guesstimate — of ROI for the projects that people want to put in. And that's really hard to do, even for experienced developers and data scientists." },
     ],
@@ -104,11 +104,11 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "careers",
-    year: "2025–26",
+    year: "2025",
     headline: "Can I automate myself out of a job?",
     subhead: "The ethical AI teams were the first to go. Now every senior leader wants more with AI.",
     narrative:
-      "Career and displacement topics came up in a few episodes. The takes were specific.",
+      "Career and displacement topics came up in a few episodes.",
     stat: "Career/displacement mentions stayed low until 2025",
     quotes: [
       { video_id: "BK2mJB3TPVY", quote_prefix: "With Gen AI, we now have tools a", highlight: "can I automate myself out of a job and then move on to another one?", extendedQuote: "With Gen AI, we now have tools at our disposal that are gonna be able to do this even more. My goal has always been, can I automate myself out of a job and then move on to another one? So it's always — can I get to the point of it doing what I would do?" },
@@ -118,7 +118,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "whatdoido",
-    year: "2024–26",
+    year: "2024",
     headline: "Should you be learning this?",
     subhead: "Wait until you have a use case — or: this is your moment, go for it",
     narrative:
@@ -134,7 +134,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "building",
-    year: "2025–26",
+    year: "2026",
     headline: "Two developers beside me that happen to be AI",
     subhead: "By 2026, guests were describing what they built that week",
     narrative:
@@ -537,6 +537,23 @@ function StoryQuote({ m, highlight, extendedQuote }: { m: Mention; highlight?: s
   );
 }
 
+const AI_KEYWORDS_TOOLTIP =
+  "ChatGPT, Claude, Gemini, GitHub Copilot, Cursor, Windsurf, LLM, generative AI, hallucination, vibe coding, prompt engineering, and related phrases like 'about AI', 'AI tool', 'AI governance'";
+
+function StatText({ text }: { text: string }) {
+  const parts = text.split("AI keywords");
+  if (parts.length === 1) return <>{text}</>;
+  return (
+    <>
+      {parts[0]}
+      <abbr title={AI_KEYWORDS_TOOLTIP} className="underline decoration-dotted cursor-help">
+        AI keywords
+      </abbr>
+      {parts[1]}
+    </>
+  );
+}
+
 // ── Chapter section ───────────────────────────────────────────────────────────
 
 function findMention(mentions: Mention[], ref: QuoteRef): Mention | undefined {
@@ -603,7 +620,7 @@ function ChapterSection({
 
         {chapter.stat && (
           <div className="border-l-2 border-indigo-400/40 pl-4 max-w-2xl">
-            <p className="text-indigo-300/70 text-sm font-medium">{chapter.stat}</p>
+            <p className="text-indigo-300/70 text-sm font-medium"><StatText text={chapter.stat} /></p>
           </div>
         )}
 
@@ -641,7 +658,7 @@ export default function StoryPage({
     <div className="min-h-screen bg-[#0D0D1A] text-white">
       {/* Fixed sidebar */}
       <nav className="fixed left-5 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col gap-2.5">
-        {CHAPTERS.map((ch) => {
+        {CHAPTERS.filter(ch => ch.id !== "end").map((ch) => {
           const active = activeChapter === ch.id;
           return (
             <button
@@ -665,7 +682,7 @@ export default function StoryPage({
           Explore data
         </Link>
         <div className="hidden md:flex items-center gap-5">
-          {CHAPTERS.map((ch) => (
+          {CHAPTERS.filter(ch => ch.id !== "end").map((ch) => (
             <button
               key={ch.id}
               onClick={() => document.getElementById(ch.id)?.scrollIntoView({ behavior: "smooth" })}
