@@ -187,14 +187,6 @@ const TIMELINE_EVENTS: TimelineEvent[] = [
     start_time: 500.81,
   },
   {
-    date: "Mar 2023",
-    label: "First accuracy concerns",
-    fullQuote: "As we've seen with ChatGPT, which speaks very authoritatively and confidently but sometimes spews nonsense, it's certainly dangerous to put beautiful charts and graphs into people's hands that tell the wrong story.",
-    context: "Art Steinmetz",
-    video_id: "iSN0XmhnGpI",
-    start_time: 256.329,
-  },
-  {
     date: "Oct 2023",
     label: "First mention of hallucination",
     fullQuote: "I'm not sure that ChatGPT is doing a very good job. I saw some hallucinations. So double check with the internet as well.",
