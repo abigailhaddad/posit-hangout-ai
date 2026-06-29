@@ -19,6 +19,13 @@ The story page (`/`) is editorially curated. The 9 chapters, 26 featured quotes,
 
 No LLMs were used to select, rank, or generate any of the content. An earlier LLM-based extraction approach was prototyped and abandoned in favor of the simpler regex pipeline.
 
+## Data downloads
+
+If you just want the data without running any code, the [v1.0.0 release](https://github.com/abigailhaddad/posit-hangout-ai/releases/tag/v1.0.0) has:
+
+- **transcripts.zip** — captions for 221 episodes (plain text, one file per episode)
+- **regex_mentions.json** — 1,039 AI keyword matches with timestamps, context, and tags
+
 ## Quick start
 
 ### 1. Python setup
