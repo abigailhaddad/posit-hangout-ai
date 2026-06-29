@@ -79,7 +79,7 @@ const CHAPTERS: Chapter[] = [
     headline: "Yes, I personally pay for this",
     subhead: "By 2024, guests were naming tools and describing what they did with them",
     narrative:
-      "By 2024, guests were naming tools and describing what they did with them.",
+      "The conversation shifted from 'what is this' to 'here's my setup.'",
     stat: "29 of 46 episodes (63%) in 2024 used AI keywords",
     quotes: [
       { video_id: "LSGgGzc3lPw", quote_prefix: "But, so I don't know if that ans", highlight: "Copilot is a big deal for developer productivity", extendedQuote: "Copilot is a big deal for developer productivity — you can use it to generate unit test cases for you and help with repetitive tasks that you might otherwise have to do a bunch of typing on and maybe make a lot more errors. Obviously there are copyright concerns and IP concerns … about misuse of LLMs." },
@@ -740,13 +740,13 @@ export default function StoryPage({
       {/* CTA */}
       <div className="py-24 px-6 text-center border-t border-white/8">
         <p className="text-white/30 text-xs uppercase tracking-widest mb-4">
-          225 episodes · 2022–2026
+          221 episodes · 2022–2026
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-          Search every AI mention we found
+          1,039 quotes, searchable
         </h2>
         <p className="text-white/40 text-base mb-10 max-w-md mx-auto">
-          Keyword-matched sentences from auto-generated transcripts. Filter by tool or topic, and click any quote to watch in the original episode.
+          Filter by tool or topic, search by keyword, and click any quote to watch the original episode.
         </p>
         <Link
           href="/explore"
