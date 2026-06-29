@@ -153,17 +153,18 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight text-white">Explore the data</h1>
           <p className="text-white/40 mt-1.5 text-sm max-w-xl">
-            {mentions.length.toLocaleString()} sentences matched by keyword search across{" "}
-            {new Set(mentions.map((m) => m.video_id)).size} auto-generated transcripts from the{" "}
+            Quotes from the{" "}
             <a
-              href="https://www.youtube.com/playlist?list=PL9HYL-VRX0oTu3bUoyYknD-vpR7Uq6bsR"
+              href="https://posit.co/data-science-hangout/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-white/70 transition-colors"
             >
               Posit Data Science Hangout
             </a>
-            . Accuracy depends on transcript quality.{" "}
+            {" "}— a weekly community call for data people. No slides, no script, just real talk.
+            These {mentions.length.toLocaleString()} sentences came up in keyword search across{" "}
+            {new Set(mentions.map((m) => m.video_id)).size} auto-generated YouTube transcripts.{" "}
             <a
               href="https://github.com/abigailhaddad/posit-hangout-ai/releases/latest"
               target="_blank"

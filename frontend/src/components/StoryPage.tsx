@@ -689,14 +689,14 @@ export default function StoryPage({
         <p className="text-white/50 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
           The{" "}
           <a
-            href="https://www.youtube.com/playlist?list=PL9HYL-VRX0oTu3bUoyYknD-vpR7Uq6bsR"
+            href="https://posit.co/data-science-hangout/"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-white/80 transition-colors"
           >
             Posit Data Science Hangout
           </a>{" "}
-          is a weekly live show where data science practitioners discuss their work, tools, and how the field is changing.
+          is a weekly community call for data people — no slides, no script, just real talk.
           These are the moments where AI came up — what they said, when it shifted, and how the conversation changed.
         </p>
         <p className="text-white/20 text-sm mt-4 max-w-xl mx-auto">
