@@ -5,7 +5,7 @@ import type { Mention } from "@/lib/types";
 
 function loadMentions(): Mention[] {
   try {
-    const p = join(process.cwd(), "..", "analysis", "regex_mentions.json");
+    const p = join(process.cwd(), "public", "data", "regex_mentions.json");
     return JSON.parse(readFileSync(p, "utf-8"));
   } catch {
     return [];

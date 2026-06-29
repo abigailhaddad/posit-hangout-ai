@@ -5,7 +5,7 @@ import type { Mention, CoverageYear, ToolYear } from "@/lib/types";
 
 function loadMentions(): Mention[] {
   try {
-    const p = join(process.cwd(), "..", "analysis", "regex_mentions.json");
+    const p = join(process.cwd(), "public", "data", "regex_mentions.json");
     return JSON.parse(readFileSync(p, "utf-8"));
   } catch {
     return [];
@@ -14,12 +14,12 @@ function loadMentions(): Mention[] {
 
 function loadCoverage(): CoverageYear[] {
   try {
-    const p = join(process.cwd(), "..", "transcripts", "_index.json");
+    const p = join(process.cwd(), "public", "data", "_index.json");
     const index: { id: string; date?: string; status?: string }[] = JSON.parse(
       readFileSync(p, "utf-8")
     );
     const mentions: { video_id: string }[] = JSON.parse(
-      readFileSync(join(process.cwd(), "..", "analysis", "regex_mentions.json"), "utf-8")
+      readFileSync(join(process.cwd(), "public", "data", "regex_mentions.json"), "utf-8")
     );
     const mentionedIds = new Set(mentions.map((m) => m.video_id));
 
@@ -49,10 +49,10 @@ function loadCoverage(): CoverageYear[] {
 function loadToolTimeline(): ToolYear[] {
   try {
     const mentions: { video_id: string; tools_mentioned?: string[] }[] = JSON.parse(
-      readFileSync(join(process.cwd(), "..", "analysis", "regex_mentions.json"), "utf-8")
+      readFileSync(join(process.cwd(), "public", "data", "regex_mentions.json"), "utf-8")
     );
     const index: { id: string; date?: string }[] = JSON.parse(
-      readFileSync(join(process.cwd(), "..", "transcripts", "_index.json"), "utf-8")
+      readFileSync(join(process.cwd(), "public", "data", "_index.json"), "utf-8")
     );
     const dateById: Record<string, string> = {};
     for (const v of index) {
