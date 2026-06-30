@@ -32,7 +32,7 @@ function InlinePlayer({ videoId, startTime }: { videoId: string; startTime: numb
   if (playing) {
     return (
       <div className="relative mt-3 rounded-lg overflow-hidden aspect-video">
-        <iframe src={embedUrl} className="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
+        <iframe src={embedUrl} title="YouTube clip" className="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
         <button
           onClick={() => setPlaying(false)}
           className="absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 flex items-center justify-center hover:bg-black/80 transition-colors"

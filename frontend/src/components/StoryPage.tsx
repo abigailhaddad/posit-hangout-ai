@@ -8,6 +8,7 @@ import {
   LineChart, Line, Legend,
 } from "recharts";
 import { youtubeUrl } from "@/lib/utils";
+import InfoTip from "./InfoTip";
 import type { Mention } from "@/lib/types";
 import type { CoverageYear, ToolYear } from "@/lib/types";
 
@@ -149,11 +150,11 @@ const CHAPTERS: Chapter[] = [
   {
     id: "end",
     year: "2022 → 2026",
-    headline: "225 episodes",
+    headline: "224 episodes",
     subhead: "",
     narrative:
       "In 2022, one guest mentioned exploring GPT-3. In 2026, another said they built an app with Claude and Positron that week.",
-    stat: "1,039 sentences matched by keyword search across 225 episodes",
+    stat: "1,039 sentences matched by keyword search across 224 episodes",
     quotes: [],
   },
 ];
@@ -235,10 +236,11 @@ function TimelinePlayer({ videoId, startTime }: { videoId: string; startTime: nu
 
   return playing ? (
     <div className="relative mt-3 rounded-lg overflow-hidden aspect-video">
-      <iframe src={embedUrl} className="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
+      <iframe src={embedUrl} title="YouTube clip" className="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
       <button
         onClick={() => setPlaying(false)}
         className="absolute top-1.5 right-1.5 z-10 w-5 h-5 rounded-full bg-black/60 flex items-center justify-center hover:bg-black/80 transition-colors"
+        aria-label="Close player"
       >
         <X size={9} className="text-white" />
       </button>
@@ -251,7 +253,7 @@ function TimelinePlayer({ videoId, startTime }: { videoId: string; startTime: nu
     >
       <div className="relative w-20 rounded-md overflow-hidden flex-shrink-0 border border-white/10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={thumbUrl} alt="" className="w-full aspect-video object-cover" />
+        <img src={thumbUrl} alt="" loading="lazy" className="w-full aspect-video object-cover" />
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
           <div className="w-6 h-6 rounded-full bg-white/15 border border-white/30 flex items-center justify-center group-hover:bg-white/25 transition-colors">
             <Play size={9} className="text-white ml-0.5" fill="white" />
@@ -266,6 +268,10 @@ function TimelinePlayer({ videoId, startTime }: { videoId: string; startTime: nu
 function Timeline() {
   const [scrollActive, setScrollActive] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
+  // Items whose quote has been revealed by scrolling. Sticky: once expanded we
+  // never collapse, since resizing content above the viewport reads as jarring
+  // vertical jumps on iOS Safari (no scroll-anchoring support).
+  const [expandedSet, setExpandedSet] = useState<Set<number>>(new Set());
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const activeIndex = hovered ?? scrollActive;
 
@@ -277,6 +283,7 @@ function Timeline() {
         ([entry]) => {
           if (entry.isIntersecting) {
             setScrollActive(i);
+            setExpandedSet((prev) => prev.has(i) ? prev : new Set(prev).add(i));
           } else {
             setScrollActive((prev) => (prev === i ? null : prev));
           }
@@ -295,6 +302,7 @@ function Timeline() {
       <div className="space-y-10">
         {TIMELINE_EVENTS.map((e, i) => {
           const isActive = activeIndex === i;
+          const isOpen = hovered === i || expandedSet.has(i);
           return (
             <div
               key={i}
@@ -316,7 +324,7 @@ function Timeline() {
                 {e.context && (
                   <p className="text-white/25 text-xs mt-0.5">{e.context}</p>
                 )}
-                <div className={`overflow-hidden transition-all duration-300 ${isActive ? "max-h-72 opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-72 opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
                   <div className="p-3 rounded-xl bg-white/8 border border-white/10 text-white/70 text-xs leading-relaxed">
                     &ldquo;{e.fullQuote}&rdquo;
                     {e.video_id && e.start_time != null && (
@@ -397,23 +405,6 @@ function ToolTimelineChart({ data }: { data: ToolYear[] }) {
 
 // ── YouTube quote card ────────────────────────────────────────────────────────
 
-function HighlightedQuote({ text, highlight }: { text: string; highlight?: string }) {
-  if (!highlight) return <span className="text-white/70">{text}</span>;
-  const lower = text.toLowerCase();
-  const needle = highlight.toLowerCase();
-  const idx = lower.indexOf(needle);
-  if (idx === -1) return <span className="text-white/70">{text}</span>;
-  return (
-    <>
-      {idx > 0 && <span className="text-white/38">{text.slice(0, idx)}</span>}
-      <span className="text-white">{text.slice(idx, idx + highlight.length)}</span>
-      {idx + highlight.length < text.length && (
-        <span className="text-white/38">{text.slice(idx + highlight.length)}</span>
-      )}
-    </>
-  );
-}
-
 function BoldedText({ text, boldChunk }: { text: string; boldChunk?: string }) {
   if (!boldChunk?.trim()) return <>{text}</>;
   const escaped = boldChunk.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -444,9 +435,14 @@ function StoryQuote({ m, highlight, extendedQuote }: { m: Mention; highlight?: s
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.05 }
     );
+    // Expand once, just before the card scrolls up into view (the +25% bottom
+    // margin fires it while still below the fold), then stay expanded. Doing the
+    // resize off-screen and never collapsing avoids the aggressive vertical jumps
+    // iOS Safari shows when content above the viewport changes height (no
+    // scroll-anchoring support there).
     const expandObs = new IntersectionObserver(
-      ([entry]) => { setExpanded(entry.isIntersecting); },
-      { rootMargin: "-25% 0px -25% 0px", threshold: 0 }
+      ([entry]) => { if (entry.isIntersecting) { setExpanded(true); expandObs.disconnect(); } },
+      { rootMargin: "0px 0px 25% 0px", threshold: 0 }
     );
     fadeObs.observe(el);
     expandObs.observe(el);
@@ -478,10 +474,11 @@ function StoryQuote({ m, highlight, extendedQuote }: { m: Mention; highlight?: s
           <div className="sm:w-48 flex-shrink-0 rounded-xl overflow-hidden border border-white/10 self-start">
             {playing ? (
               <div className="relative aspect-video">
-                <iframe src={embedUrl} className="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
+                <iframe src={embedUrl} title="YouTube clip" className="w-full h-full" allow="autoplay; encrypted-media; fullscreen" allowFullScreen />
                 <button
                   onClick={() => setPlaying(false)}
                   className="absolute top-1.5 right-1.5 z-10 w-6 h-6 rounded-full bg-black/60 flex items-center justify-center hover:bg-black/80 transition-colors"
+                  aria-label="Close player"
                 >
                   <X size={11} className="text-white" />
                 </button>
@@ -489,7 +486,7 @@ function StoryQuote({ m, highlight, extendedQuote }: { m: Mention; highlight?: s
             ) : (
               <button onClick={() => setPlaying(true)} className="relative w-full aspect-video block group overflow-hidden" aria-label="Play clip">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={thumbUrl} alt="" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={thumbUrl} alt="" loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-9 h-9 rounded-full bg-white/15 border border-white/30 flex items-center justify-center group-hover:bg-white/25 transition-colors">
@@ -538,9 +535,7 @@ function StatText({ text }: { text: string }) {
   return (
     <>
       {parts[0]}
-      <abbr title={AI_KEYWORDS_TOOLTIP} className="underline decoration-dotted cursor-help">
-        AI keywords
-      </abbr>
+      <InfoTip text={AI_KEYWORDS_TOOLTIP}>AI keywords</InfoTip>
       {parts[1]}
     </>
   );
@@ -644,7 +639,6 @@ export default function StoryPage({
   toolTimeline: ToolYear[];
 }) {
   const [activeChapter, setActiveChapter] = useState(CHAPTERS[0].id);
-  const totalEpisodes = coverage.reduce((s, d) => s + d.total, 0);
 
   return (
     <div className="min-h-screen bg-[#0D0D1A] text-white">
@@ -690,7 +684,7 @@ export default function StoryPage({
       {/* Hero */}
       <div className="text-center pt-24 pb-10 px-6">
         <p className="text-white/25 text-xs uppercase tracking-widest mb-5">
-          225 episodes · 2021–2026
+          224 episodes · 2021–2026
         </p>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight max-w-3xl mx-auto">
           How data scientists talked about AI — 2022 to 2026
@@ -732,7 +726,7 @@ export default function StoryPage({
       {/* CTA */}
       <div className="py-24 px-6 text-center border-t border-white/8">
         <p className="text-white/30 text-xs uppercase tracking-widest mb-4">
-          225 episodes · 2021–2026
+          224 episodes · 2021–2026
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
           1,039 quotes, searchable

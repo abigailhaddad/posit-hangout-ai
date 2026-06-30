@@ -4,6 +4,7 @@ import { useState, useMemo, useRef } from "react";
 import Link from "next/link";
 import { ArrowLeft, Search, X, LayoutGrid, List } from "lucide-react";
 import QuoteCard from "./QuoteCard";
+import InfoTip from "./InfoTip";
 import { TOOL_COLORS, KEYWORD_COLORS, youtubeUrl } from "@/lib/utils";
 import type { Mention } from "@/lib/types";
 
@@ -126,7 +127,8 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
 
   const toggle = <T,>(set: Set<T>, item: T): Set<T> => {
     const next = new Set(set);
-    next.has(item) ? next.delete(item) : next.add(item);
+    if (next.has(item)) next.delete(item);
+    else next.add(item);
     return next;
   };
 
@@ -173,7 +175,7 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
             >
               Download all transcripts ↓
             </a>
-            {" "}· <span title="15 episodes from mid-2021 were initially blocked by YouTube and later retrieved via yt-dlp. All 225 episodes now have transcripts.">225 of 225 episodes have transcripts</span>
+            {" "}· <InfoTip text="15 episodes from mid-2021 were initially blocked by YouTube and later retrieved via yt-dlp. All 224 episodes now have transcripts.">224 of 224 episodes have transcripts</InfoTip>
           </p>
         </div>
 
@@ -206,6 +208,8 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
                   className="px-3 py-2.5 transition-colors"
                   style={{ background: view === "cards" ? "rgba(255,255,255,0.1)" : "transparent", color: view === "cards" ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.25)" }}
                   title="Card view"
+                  aria-label="Card view"
+                  aria-pressed={view === "cards"}
                 >
                   <LayoutGrid size={15} />
                 </button>
@@ -214,6 +218,8 @@ export default function ExplorePage({ mentions }: { mentions: Mention[] }) {
                   className="px-3 py-2.5 transition-colors border-l border-white/10"
                   style={{ background: view === "episodes" ? "rgba(255,255,255,0.1)" : "transparent", color: view === "episodes" ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.25)" }}
                   title="Episode view"
+                  aria-label="Episode view"
+                  aria-pressed={view === "episodes"}
                 >
                   <List size={15} />
                 </button>
