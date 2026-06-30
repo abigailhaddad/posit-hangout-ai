@@ -16,6 +16,9 @@ venv/
 transcripts/*.txt
 transcripts/*.chunks.json
 
+# yt-dlp cookies — sensitive, never commit or release
+youtube_cookies.txt
+
 # Old / intermediate analysis files — not used by the frontend
 analysis/mentions.json
 analysis/mentions_raw.json

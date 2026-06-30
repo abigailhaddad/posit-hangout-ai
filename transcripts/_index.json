@@ -253,10 +253,10 @@
   },
   {
     "id": "LEZ1XVr-qd4",
-    "title": "Data Science Hangout | Ivonne Carrillo Dom\u00ednguez, Bixal | Transitioning to data engineering",
+    "title": "Data Science Hangout | Ivonne Carrillo Domínguez, Bixal | Transitioning to data engineering",
     "date": "2022-08-25",
     "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Ivonne_Carrillo_Dom\u00ednguez_Bixal__Transitioning_to_data_eng_LEZ1XVr-qd4.txt"
+    "file": "transcripts/Data_Science_Hangout__Ivonne_Carrillo_Domínguez_Bixal__Transitioning_to_data_eng_LEZ1XVr-qd4.txt"
   },
   {
     "id": "nrukV58ZXBg",
@@ -624,10 +624,10 @@
   },
   {
     "id": "GvgbcWtHgVY",
-    "title": "DuckDB and the future of databases | Hannes M\u00fchleisen | Data Science Hangout",
+    "title": "DuckDB and the future of databases | Hannes Mühleisen | Data Science Hangout",
     "date": "2025-01-09",
     "status": "ok",
-    "file": "transcripts/DuckDB_and_the_future_of_databases__Hannes_M\u00fchleisen__Data_Science_Hangout_GvgbcWtHgVY.txt"
+    "file": "transcripts/DuckDB_and_the_future_of_databases__Hannes_Mühleisen__Data_Science_Hangout_GvgbcWtHgVY.txt"
   },
   {
     "id": "VUgoaNhE4u0",
@@ -806,10 +806,10 @@
   },
   {
     "id": "k5z09QIMrVY",
-    "title": "Jean-Vincent Le B\u00e9 @ Nestl\u00e9 | Data Science Hangout",
+    "title": "Jean-Vincent Le Bé @ Nestlé | Data Science Hangout",
     "date": "2023-10-30",
     "status": "ok",
-    "file": "transcripts/Jean-Vincent_Le_B\u00e9__Nestl\u00e9__Data_Science_Hangout_k5z09QIMrVY.txt"
+    "file": "transcripts/Jean-Vincent_Le_Bé__Nestlé__Data_Science_Hangout_k5z09QIMrVY.txt"
   },
   {
     "id": "FU829X_WdYE",
@@ -1365,13 +1365,6 @@
     "file": "transcripts/Why_regression_still_matters__Keith_McNulty__Data_Science_Hangout_MEqgXHamFAY.txt"
   },
   {
-    "id": "ube_cookies",
-    "title": "# Netscape HTTP Cookie File",
-    "date": null,
-    "status": "ok",
-    "file": "transcripts/youtube_cookies.txt"
-  },
-  {
     "id": "kyMlO805hHE",
     "title": "Data Science Career Growth | Pallas Horwitz | Data Science Hangout",
     "date": "2025-06-09",
@@ -1541,10 +1534,10 @@
   },
   {
     "id": "aIDg-9Ox5vo",
-    "title": "Data Science Hangout | \u00d3li P\u00e1ll Geirsson, City of Reykjavik | Data Science is More About People",
+    "title": "Data Science Hangout | Óli Páll Geirsson, City of Reykjavik | Data Science is More About People",
     "date": "2021-10-12",
     "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__\u00d3li_P\u00e1ll_Geirsson_City_of_Reykjavik__Data_Science_is_More__aIDg-9Ox5vo.txt"
+    "file": "transcripts/Data_Science_Hangout__Óli_Páll_Geirsson_City_of_Reykjavik__Data_Science_is_More__aIDg-9Ox5vo.txt"
   },
   {
     "id": "3BrmOHgP_XI",
@@ -1566,116 +1559,6 @@
     "date": "2021-08-17",
     "status": "ok",
     "file": "transcripts/Data_Science_Hangout__Frank_Corrigan_Target__Understanding_the_Impact_of_Data_Sc_KBs4b3Q2n8Y.txt"
-  },
-  {
-    "id": "YTNYjS_PeFs",
-    "title": "Data Science Hangout | Tori Oblad, WaFd Bank | Getting Executives to Support Data Science",
-    "date": "2021-08-03",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Tori_Oblad_WaFd_Bank__Getting_Executives_to_Support_Data_S_YTNYjS_PeFs.txt"
-  },
-  {
-    "id": "pNTENrov020",
-    "title": "Data Science Hangout | Jonathan Regenstein, Truist | Relationships with IT and Non-Data Scientists",
-    "date": "2021-07-26",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Jonathan_Regenstein_Truist__Relationships_with_IT_and_Non-_pNTENrov020.txt"
-  },
-  {
-    "id": "SyFcCTcERqo",
-    "title": "Data Science Hangout | Edgar Gallo, Daimler Trucks | Training a Team of Data Scientists",
-    "date": "2021-12-03",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Edgar_Gallo_Daimler_Trucks__Training_a_Team_of_Data_Scient_SyFcCTcERqo.txt",
-    "guest": ""
-  },
-  {
-    "id": "qPMJiXg7XME",
-    "title": "Data Science Hangout | Rami Krispin, Apple | Building your Personal Brand in Data Science",
-    "date": "2021-12-01",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Rami_Krispin_Apple__Building_your_Personal_Brand_in_Data_S_qPMJiXg7XME.txt",
-    "guest": ""
-  },
-  {
-    "id": "ROcH6YKzICw",
-    "title": "Data Science Hangout | Kobi Abayomi at Warner Music Group | Adjusting Metrics Across the Business",
-    "date": "2021-11-19",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Kobi_Abayomi_at_Warner_Music_Group__Adjusting_Metrics_Acro_ROcH6YKzICw.txt",
-    "guest": ""
-  },
-  {
-    "id": "A3JNPvjjHKk",
-    "title": "Data Science Hangout | Zac Garland, Mastercard | \\",
-    "date": "2021-11-04",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Zac_Garland_Mastercard_A3JNPvjjHKk.txt",
-    "guest": ""
-  },
-  {
-    "id": "l3825QyCpbE",
-    "title": "Data Science Hangout | Paul Ditterline, Heaven Hill Brands | Getting Buy-in to Adopt New Tools",
-    "date": "2021-11-03",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Paul_Ditterline_Heaven_Hill_Brands__Getting_Buy-in_to_Adop_l3825QyCpbE.txt",
-    "guest": ""
-  },
-  {
-    "id": "CcPE29bYGVo",
-    "title": "Data Science Hangout | Jacqueline Nolis, Saturn Cloud | Structuring Teams to Empower the Business",
-    "date": "2021-10-19",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Jacqueline_Nolis_Saturn_Cloud__Structuring_Teams_to_Empowe_CcPE29bYGVo.txt",
-    "guest": ""
-  },
-  {
-    "id": "QVD7JXwtjmg",
-    "title": "Data Science Hangout | Joel Pepera, GEICO | Fundamentals of Data Strategy & Data Science Maturity",
-    "date": "2021-10-19",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Joel_Pepera_GEICO__Fundamentals_of_Data_Strategy__Data_Sci_QVD7JXwtjmg.txt",
-    "guest": ""
-  },
-  {
-    "id": "yaFGSme7lxk",
-    "title": "Data Science Hangout | Bryan Butler, Eastern Bank | Using the Best Tool for the Job",
-    "date": "2021-10-19",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Bryan_Butler_Eastern_Bank__Using_the_Best_Tool_for_the_Job_yaFGSme7lxk.txt",
-    "guest": ""
-  },
-  {
-    "id": "aIDg-9Ox5vo",
-    "title": "Data Science Hangout | \u00d3li P\u00e1ll Geirsson, City of Reykjavik | Data Science is More About People",
-    "date": "2021-10-12",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__\u00d3li_P\u00e1ll_Geirsson_City_of_Reykjavik__Data_Science_is_More__aIDg-9Ox5vo.txt",
-    "guest": ""
-  },
-  {
-    "id": "3BrmOHgP_XI",
-    "title": "Data Science Hangout | Sep Dadsetan at ConcertAI | Infrastructure that Encourages Reproducibility",
-    "date": "2021-09-15",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Sep_Dadsetan_at_ConcertAI__Infrastructure_that_Encourages__3BrmOHgP_XI.txt",
-    "guest": ""
-  },
-  {
-    "id": "sWG7nIrLoHM",
-    "title": "Data Science Hangout | Moody Hadi at S&P Global | Unlocking Business Value with Data Science",
-    "date": "2021-08-24",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Moody_Hadi_at_SP_Global__Unlocking_Business_Value_with_Dat_sWG7nIrLoHM.txt",
-    "guest": ""
-  },
-  {
-    "id": "KBs4b3Q2n8Y",
-    "title": "Data Science Hangout | Frank Corrigan, Target | Understanding the Impact of Data Science",
-    "date": "2021-08-17",
-    "status": "ok",
-    "file": "transcripts/Data_Science_Hangout__Frank_Corrigan_Target__Understanding_the_Impact_of_Data_Sc_KBs4b3Q2n8Y.txt",
-    "guest": ""
   },
   {
     "id": "YTNYjS_PeFs",

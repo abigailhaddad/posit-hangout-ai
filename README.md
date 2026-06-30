@@ -7,7 +7,7 @@ Not affiliated with or endorsed by Posit PBC.
 ## How it works
 
 ### Transcripts
-Auto-generated YouTube captions are fetched for all ~225 episodes via `youtube_transcript_api`. These are plain text with no speaker labels — accuracy varies, especially for names and jargon.
+Auto-generated YouTube captions are fetched for all 224 episodes via `youtube_transcript_api`. These are plain text with no speaker labels — accuracy varies, especially for names and jargon.
 
 ### Regex extraction
 `regex_extraction.py` searches every transcript for sentences containing explicit AI keywords: tool names (ChatGPT, Copilot, Claude, Gemini, Cursor), concepts (LLM, generative AI, hallucination, vibe coding, prompt engineering), and phrases like "about AI", "using AI", "AI governance". Sentences matching only ambiguous terms like "machine learning" or "neural network" are excluded unless a second AI signal is also present.
@@ -23,7 +23,7 @@ No LLMs were used to select, rank, or generate any of the content. An earlier LL
 
 If you just want the data without running any code, the [v1.0.0 release](https://github.com/abigailhaddad/posit-hangout-ai/releases/tag/v1.0.0) has:
 
-- **transcripts.zip** — captions for 221 episodes (plain text, one file per episode)
+- **transcripts.zip** — captions for 224 episodes (plain text, one file per episode)
 - **regex_mentions.json** — 1,039 AI keyword matches with timestamps, context, and tags
 
 ## Quick start
@@ -40,7 +40,7 @@ pip install youtube_transcript_api
 python3 get_transcripts.py
 ```
 
-Downloads 225 transcripts. Note: 15 episodes from mid-2021 were IP-blocked by YouTube's API and required a separate fetch via yt-dlp — run `fetch_blocked_via_ytdlp.py` if you see errors on those IDs. All 225 episodes currently have transcripts.
+Downloads 224 transcripts. Note: 15 episodes from mid-2021 were IP-blocked by YouTube's API and required a separate fetch via yt-dlp — run `fetch_blocked_via_ytdlp.py` if you see errors on those IDs. All 224 episodes currently have transcripts.
 
 Downloads transcripts for all playlist episodes into `transcripts/`. Skips already-fetched episodes on re-runs.
 
@@ -50,7 +50,7 @@ Downloads transcripts for all playlist episodes into `transcripts/`. Skips alrea
 python3 regex_extraction.py
 ```
 
-Outputs `analysis/regex_mentions.json` (~1,000 sentences across ~220 episodes). Run with `--audit` to review a random sample before writing.
+Outputs `analysis/regex_mentions.json` (1,039 sentences across 224 episodes). Run with `--audit` to review a random sample before writing.
 
 ### 4. Run the frontend
 
