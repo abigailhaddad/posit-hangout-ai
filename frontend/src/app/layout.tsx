@@ -18,16 +18,16 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "AI in Data Science — Posit Hangout",
-  description: "How data science practitioners talked about AI over four years of the Posit Data Science Hangout. 1,039 matched sentences across 221 episodes.",
+  description: "How data science practitioners talked about AI over four years of the Posit Data Science Hangout. 1,039 matched sentences across 225 episodes.",
   openGraph: {
     title: "AI in Data Science — Posit Hangout",
-    description: "Four years of the Posit Data Science Hangout — how practitioners talked about AI. 1,039 mentions across 221 episodes.",
+    description: "Four years of the Posit Data Science Hangout — how practitioners talked about AI. 1,039 mentions across 225 episodes.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "AI in Data Science — Posit Hangout",
-    description: "Four years of the Posit Data Science Hangout — how practitioners talked about AI. 1,039 mentions across 221 episodes.",
+    description: "Four years of the Posit Data Science Hangout — how practitioners talked about AI. 1,039 mentions across 225 episodes.",
   },
 };
 

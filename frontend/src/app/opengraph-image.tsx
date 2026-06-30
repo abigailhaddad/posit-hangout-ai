@@ -69,7 +69,7 @@ export default function OgImage() {
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          1,039 mentions · 221 episodes · 2022–2026
+          1,039 mentions · 225 episodes · 2021–2026
         </div>
       </div>
     ),

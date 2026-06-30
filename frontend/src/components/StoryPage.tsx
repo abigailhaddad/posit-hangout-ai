@@ -690,7 +690,7 @@ export default function StoryPage({
       {/* Hero */}
       <div className="text-center pt-24 pb-10 px-6">
         <p className="text-white/25 text-xs uppercase tracking-widest mb-5">
-          225 episodes · 2022–2026
+          225 episodes · 2021–2026
         </p>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight max-w-3xl mx-auto">
           How data scientists talked about AI — 2022 to 2026
