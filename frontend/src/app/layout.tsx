@@ -17,8 +17,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Drives metadataBase, so it decides the canonical + OG/Twitter URLs.
+// VERCEL_URL is the per-deployment host (posit-hangout-<hash>.vercel.app), which is
+// SSO-protected and useless in a social card, so production must be pinned to the real
+// domain. Previews still fall back to VERCEL_URL so their cards point at themselves.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://posit-hangout-ai.vercel.app");
+  ?? (process.env.VERCEL_ENV === "production"
+    ? "https://posit-hangout-ai.abigailhaddad.com"
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
