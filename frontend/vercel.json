@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "posit-hangout-ai.vercel.app"
+        }
+      ],
+      "destination": "https://posit-hangout-ai.abigailhaddad.com/",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "posit-hangout-ai.vercel.app"
+        }
+      ],
+      "destination": "https://posit-hangout-ai.abigailhaddad.com/:path*",
+      "permanent": false
+    }
+  ]
+}
