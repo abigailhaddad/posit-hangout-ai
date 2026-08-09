@@ -1,6 +1,10 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+// Rendered once at build time into the static export, not per request on the
+// edge. The card is identical for every visitor -- it takes no request input --
+// so there was never a reason to generate it at runtime, and `output: "export"`
+// refuses to build a route that might be dynamic.
+export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

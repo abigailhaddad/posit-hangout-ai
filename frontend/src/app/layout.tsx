@@ -18,15 +18,17 @@ const geistMono = Geist_Mono({
 });
 
 // Drives metadataBase, so it decides the canonical + OG/Twitter URLs.
-// VERCEL_URL is the per-deployment host (posit-hangout-<hash>.vercel.app), which is
-// SSO-protected and useless in a social card, so production must be pinned to the real
-// domain. Previews still fall back to VERCEL_URL so their cards point at themselves.
+//
+// The real domain is the default rather than the last resort. This used to key
+// off VERCEL_ENV and VERCEL_URL, which meant a build anywhere other than Vercel
+// -- including the static export this site now ships as -- fell through to
+// http://localhost:3000 and emitted social cards pointing at the developer's
+// laptop. Nothing in the build announces that it went wrong.
+//
+// NEXT_PUBLIC_SITE_URL still overrides, which is what local development and any
+// future preview host should set.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ?? (process.env.VERCEL_ENV === "production"
-    ? "https://posit-hangout-ai.abigailhaddad.com"
-    : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000");
+  ?? "https://posit-hangout-ai.abigailhaddad.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

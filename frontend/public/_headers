@@ -1,0 +1,7 @@
+# Next's static export writes the generated Open Graph card as an extensionless
+# file. Cloudflare Pages infers Content-Type from the extension, so it went out
+# as application/octet-stream, which Twitter and Facebook refuse to render as a
+# card. Vercel set the type from the route's `contentType` export instead, so
+# this only breaks off-Vercel.
+/opengraph-image
+  Content-Type: image/png
