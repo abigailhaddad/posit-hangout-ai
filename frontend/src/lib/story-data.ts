@@ -117,7 +117,7 @@ export const CHAPTERS: Chapter[] = [
     subhead: "First mentioned in January 2023",
     narrative:
       "JJ Allaire named ChatGPT and GitHub Copilot in January 2023. By March, guests were working out their takes.",
-    stat: "22 of 44 episodes (50%) in 2023 used AI keywords",
+    stat: "21 of 44 episodes (48%) in 2023 used AI keywords",
     quotes: [
       { video_id: "mqOva6Y0xFo", quote_prefix: "So I think things that are happening in", highlight: "But I feel technology companies and technologists sometimes feel like, we should do this because we can, or we should do this because it's cool", extendedQuote: "I think things that are happening in AI, and generative AI specifically, are exciting. But I feel technology companies and technologists sometimes feel like, we should do this because we can, or we should do this because it's cool, and haven't thought about the broader social, political, economic implications. I think we're going a little too fast." },
       { video_id: "hjufaKBU6Ec", quote_prefix: "I mean, maybe if ChatGPT becomes", highlight: "maybe if ChatGPT becomes even better and then we become obsolete", extendedQuote: "I mean, maybe if ChatGPT becomes even better and then we become obsolete, OK, maybe. But I don't think that's going to go away. I think the way to prove the contribution, the benefit of a community — I used the word stuck and the other word unstuck — because that's really the only thing any business cares about. … There are obstacles in the way, they are stuck. How do they get unstuck? That's all data science is for, really." },
@@ -219,7 +219,7 @@ export const CHAPTERS: Chapter[] = [
     subhead: "",
     narrative:
       "In 2022, one guest mentioned exploring GPT-3. In 2026, another said they built an app with Claude and Positron that week.",
-    stat: "1,039 sentences matched by keyword search across 224 episodes",
+    stat: "1,035 sentences matched by keyword search across 224 episodes",
     quotes: [],
   },
 ];
