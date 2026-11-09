@@ -511,7 +511,7 @@ export default function StoryPage({
           224 episodes · 2021–2026
         </p>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-          1,039 quotes, searchable
+          1,035 quotes, searchable
         </h2>
         <p className="text-white/40 text-base mb-10 max-w-md mx-auto">
           Filter by tool or topic, search by keyword, and click any quote to watch the original episode.

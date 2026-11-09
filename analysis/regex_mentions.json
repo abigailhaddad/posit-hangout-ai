@@ -1594,21 +1594,6 @@
     "quality": 2
   },
   {
-    "video_id": "_zNGyyrG3_8",
-    "title": "Michael Lopez @ NFL | Being forward-thinking & anticipating questions | Data Science Hangout",
-    "date": "2023-09-14",
-    "guest": "Being forward-thinking & anticipating questions",
-    "quote": "And Devin said, thanks for\npowering my fantasy leagues as well.",
-    "context_before": "But the question was, what kind of decision-making is\nyour work driving at the league level versus the Moneyball\nteam versus team decision-making?",
-    "context_after": "- So we are primarily interested\nin what happens on the field.",
-    "start_time": 450.18,
-    "end_time": null,
-    "tools_mentioned": [],
-    "keyword_tags": [],
-    "is_guest_speaking": true,
-    "quality": 2
-  },
-  {
     "video_id": "5V3gDb30cT8",
     "title": "Gabriela de Queiroz @ Microsoft | Data Science Hangout",
     "date": "2023-10-17",
@@ -8248,36 +8233,6 @@
     "quality": 2
   },
   {
-    "video_id": "G9yWBSw8hOw",
-    "title": "Bringing data science to the construction industry | Blake Abbenante | Data Science Hangout",
-    "date": "2025-03-05",
-    "guest": "Blake Abbenante",
-    "quote": "Devin, are you available\nto unmute and ask this one?",
-    "context_before": "And our next question\nis from Devin.",
-    "context_after": "Put you on the spot here. There we go.",
-    "start_time": 2560.16,
-    "end_time": null,
-    "tools_mentioned": [],
-    "keyword_tags": [],
-    "is_guest_speaking": true,
-    "quality": 2
-  },
-  {
-    "video_id": "G9yWBSw8hOw",
-    "title": "Bringing data science to the construction industry | Blake Abbenante | Data Science Hangout",
-    "date": "2025-03-05",
-    "guest": "Blake Abbenante",
-    "quote": "Awesome. Thanks so much for asking\nthat question, Devin.",
-    "context_before": "But if we can just, like,\ntrack stuff around, you know, on construction sites, whether\nthrough, like, AI or just, like, monitors, I\nthink, you know, we can we can lower\nthe load that we need, from a from a, adoption\nstandpoint on the data generation side, at least.",
-    "context_after": "I have a anonymous question\nthat has risen to the top on Slido.",
-    "start_time": 2756.04,
-    "end_time": null,
-    "tools_mentioned": [],
-    "keyword_tags": [],
-    "is_guest_speaking": true,
-    "quality": 2
-  },
-  {
     "video_id": "bUw9w92U1UM",
     "title": "From Ecology PhD to Global Marketing at HP | John Stanton-Geddes | Data Science Hangout",
     "date": "2025-03-05",
@@ -8419,23 +8374,6 @@
     "keyword_tags": [
       "learning"
     ],
-    "is_guest_speaking": true,
-    "quality": 2
-  },
-  {
-    "video_id": "VvumEy3dbX0",
-    "title": "Data Science at the Command Line and Polars | Jeroen Janssens | Data Science Hangout",
-    "date": "2025-03-19",
-    "guest": "Jeroen Janssens",
-    "quote": "So the UNIX command line,\nwhen you first open it, when you first see it, you're\ngreeted with this, well, usually a black box and this\nthis this prompt and a cursor that's blinking at you.",
-    "context_before": "So, like, pitch us on that. Yeah.",
-    "context_after": "And it's it's not\nvery inviting.",
-    "start_time": 999.44,
-    "end_time": null,
-    "tools_mentioned": [
-      "Cursor"
-    ],
-    "keyword_tags": [],
     "is_guest_speaking": true,
     "quality": 2
   },

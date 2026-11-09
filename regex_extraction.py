@@ -45,7 +45,10 @@ AI_PATTERNS = [
     re.compile(r"\b(ChatGPT|GPT-?[34]\b|DALL-?E|Gemini|Bard)\b", re.I),
     re.compile(r"\b(Claude|Anthropic)\b", re.I),
     re.compile(r"\b(GitHub\s+Copilot|Copilot)\b", re.I),
-    re.compile(r"\b(Claude\s+Code|cursor\s+AI|Cursor|Windsurf|Devin)\b", re.I),
+    re.compile(r"\b(Claude\s+Code|cursor\s+AI|Windsurf)\b", re.I),
+    # Case-sensitive: lowercase "cursor" is the text cursor. "Devin" is left out
+    # on purpose: in these transcripts it is always a person's first name.
+    re.compile(r"\bCursor\b"),
     re.compile(r"\b(Midjourney|Stable\s+Diffusion|DALL.E)\b", re.I),
     re.compile(r"\bShiny\s+Assist\b", re.I),  # Posit AI feature
 

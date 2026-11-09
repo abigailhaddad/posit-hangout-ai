@@ -17,7 +17,7 @@ test.describe("Explore page", () => {
     const search = page.getByPlaceholder(/search/i);
     await search.fill("hallucination");
     await expect(page.locator("blockquote").first()).toContainText(/hallucin/i);
-    await expect(page.getByText(/of 1,039/).first()).toBeVisible();
+    await expect(page.getByText(/of 1,035/).first()).toBeVisible();
   });
 
   test("clearing search restores full results", async ({ page }) => {

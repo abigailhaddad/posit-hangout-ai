@@ -24,7 +24,7 @@ No LLMs were used to select, rank, or generate any of the content. An earlier LL
 If you just want the data without running any code, the [v1.0.0 release](https://github.com/abigailhaddad/posit-hangout-ai/releases/tag/v1.0.0) has:
 
 - **transcripts.zip** — captions for 224 episodes (plain text, one file per episode)
-- **regex_mentions.json** — 1,039 AI keyword matches with timestamps, context, and tags
+- **regex_mentions.json** — 1,035 AI keyword matches with timestamps, context, and tags
 
 ## Quick start
 
@@ -50,7 +50,7 @@ Downloads transcripts for all playlist episodes into `transcripts/`. Skips alrea
 python3 regex_extraction.py
 ```
 
-Outputs `analysis/regex_mentions.json` (1,039 sentences across 224 episodes). Run with `--audit` to review a random sample before writing.
+Outputs `analysis/regex_mentions.json` (1,035 sentences across 224 episodes). Run with `--audit` to review a random sample before writing.
 
 ### 4. Run the frontend
 
